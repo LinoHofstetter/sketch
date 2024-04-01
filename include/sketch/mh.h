@@ -326,6 +326,10 @@ struct FinalRMinHash {
         tmp += o;
         return tmp;
     }
+    //added this dummy implementation so that compiler doesn't complain about the missing function
+    double union_size(const FinalRMinHash &o) const {
+        throw std::runtime_error("union_size called on FinalRMinHash, which is not supported.");
+    }
     /*
     double union_size(const FinalRMinHash &o) const {
         std::vector<T> total(o.begin(), o.end());
